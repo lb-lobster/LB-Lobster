@@ -1,0 +1,102 @@
+{
+  "title": "MaillardHelp｜商业逻辑示范",
+  "brand": "maillardhelp",
+  "status": "UNVERIFIED_DRAFT",
+  "sources": [
+    {
+      "id": "owner-brief",
+      "title": "经营者提供的项目方向（未独立核实）",
+      "kind": "internal"
+    }
+  ],
+  "slides": [
+    {
+      "type": "cover",
+      "eyebrow": "INVESTOR PRESENTATION / CONCEPT ONLY",
+      "headline": "把烘焙新品变成可持续的消费体验",
+      "subtitle": "MaillardHelp｜架构演示（不含真实经营预测）"
+    },
+    {
+      "type": "thesis",
+      "headline": "先验证需求，再扩大投资",
+      "statement": "以现有资源为起点，将单品、内容传播与预订销售串成一个可验证的闭环。",
+      "support": [
+        "关键前提：需核实门店设备、产能和场地费用。",
+        "门店承担体验与内容素材生产，线上承担预订与复购。",
+        "所有转换率、定价及毛利率应通过真实试运营验证。"
+      ]
+    },
+    {
+      "type": "flow",
+      "headline": "消费者体验必须形成连续的转化路径",
+      "steps": [
+        {
+          "label": "刷到内容",
+          "detail": "短视频展示真实产品与门店"
+        },
+        {
+          "label": "预约/到店",
+          "detail": "清晰的商品与时间窗口"
+        },
+        {
+          "label": "体验分享",
+          "detail": "品质、服务、拍摄空间"
+        },
+        {
+          "label": "再次购买",
+          "detail": "蛋糕预订与节日复购"
+        }
+      ],
+      "insight": "流量不是终点，复购和单位贡献才是经营结果。"
+    },
+    {
+      "type": "comparison",
+      "headline": "两个销售渠道分工，避免互相抢资源",
+      "columns": [
+        "维度",
+        "线下门店",
+        "线上预订"
+      ],
+      "rows": [
+        [
+          "核心任务",
+          "试吃体验、打卡、即时购买",
+          "蛋糕预订、节庆需求、复购"
+        ],
+        [
+          "商品结构",
+          "少数高识别度即时产品",
+          "标准化可配送/自提产品"
+        ],
+        [
+          "待验证指标",
+          "进店转化、客单价",
+          "履约成本、复购率"
+        ]
+      ],
+      "insight": "两个渠道共享品牌与产能，分别核算单位经济。"
+    },
+    {
+      "type": "metrics",
+      "headline": "试运营先验证三项指标，而不是先扩张",
+      "metrics": [
+        {
+          "label": "线下进店转化",
+          "value": "待测",
+          "assumption": true
+        },
+        {
+          "label": "蛋糕履约毛利",
+          "value": "待测",
+          "assumption": true
+        },
+        {
+          "label": "线上复购比例",
+          "value": "待测",
+          "assumption": true
+        }
+      ],
+      "note": "此页为待填 KPI 模板；不代表真实经营数据。"
+    }
+  ]
+}
