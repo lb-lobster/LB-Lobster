@@ -79,6 +79,8 @@ function validate(deck){
     }
     if(s.type==='chart'&&(!Array.isArray(s.labels)||!Array.isArray(s.values)||s.labels.length!==s.values.length))
       errs.push('Slide '+(i+1)+': chart labels[] and values[] mismatch');
+    if(s.type==='chart'&&!s.sourceId&&!s.assumption)errs.push('Slide '+(i+1)+': chart needs sourceId or assumption=true');
+    if(s.type==='chart'&&s.sourceId&&!ids.has(s.sourceId))errs.push('Slide '+(i+1)+': unknown sourceId '+s.sourceId);
   }
   return errs;
 }
