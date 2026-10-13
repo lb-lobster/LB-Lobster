@@ -28,7 +28,7 @@ npm run demo
 
 生成结果： \`dist/maillardhelp-demo.pptx\`，对应的 \`.report.json\` 会记录结构审核结果。
 
-也可以在 Finder 里双击 \`scripts/install_macos.command\`（首次运行可能需要右键→打开）。脚本将检查 Node、安装依赖、并在桌面放一个双击入口。Mac 未授权的程序不能代替用户自动安装。
+也可以在 Finder 里双击 \`scripts/install_macos.command\`（首次运行可能需要右键→打开）。脚本将检查 Node、安装依赖和三个内置 Codex Skill，并在桌面放一个双击入口；双击后通过系统文件选择器选择需要转换的文档。外部三个图像 Skill 需要用户明确选择才会安装。Mac 未授权的程序不能代替用户自动安装。
 
 ## 统一生成
 
@@ -43,7 +43,7 @@ DOCX 需要 \`mammoth\`（随 npm install 安装）。PDF 提取需要 \`brew in
 
 ## 模块独立调用（可抽出去单独作为一个 Git 使用）
 
-**核心工具一套，Skill 插件各自独立。** 目录 \`skills/{strategy,visual-director,pptx-builder}/SKILL.md\` 均可以单独复制到 \`~/.codex/skills/<name>/\`，并在 Codex 用同名 Skill 发指令。
+**核心工具一套，Skill 插件各自独立。** 内置三个 Skill 分别是 \`lb-ppt-strategy\`、\`lb-visual-director\` 和 \`lb-pptx-builder\`。双击 Mac 安装脚本会将它们自动复制到 \`~/.codex/skills/\`（不会覆盖已有版本），重启 Codex 后可以直接指定单个 Skill 调用。
 
 ~~~bash
 node bin/lbp.mjs skill strategy
