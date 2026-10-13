@@ -167,14 +167,10 @@ function addSlide(pptx,deck,s,n,t){
 }
 async function make(file,out,opts={}){
   const deck=await inputDeck(file);deck.__dir=path.dirname(path.resolve(file));
+  if((deck.sources||[]).length && !deck.slides.some(s=>s.type==='sources'))deck.slides.push({type:'sources',headline:'来源与研究边界'});
   const issues=validate(deck);if(issues.length)throw new Error('Input validation failed:\n'+issues.join('\n'));
   const t=theme(deck),pptx=new PptxGenJS();pptx.layout='LAYOUT_WIDE';pptx.author='LB Presentation Studio';pptx.subject='Editable presentations';pptx.title=deck.title||'Presentation';pptx.lang='zh-CN';
   deck.slides.forEach((s,i)=>addSlide(pptx,deck,s,i+1,t));
-  if((deck.sources||[]).length && !deck.slides.some(s=>s.type==='sources')){
-    deck.slides.push({type:'sources',headline:'来源与研究边界'});
-    // Keep page counts consistent by rebuilding the footer page after source append.
-    pptx._slides=[];deck.slides.forEach((s,i)=>addSlide(pptx,deck,s,i+1,t));
-  }
   fs.mkdirSync(path.dirname(path.resolve(out)),{recursive:true});
   await pptx.writeFile({fileName:path.resolve(out)});
   const report={output:path.resolve(out),slides:deck.slides.length,contentWarnings:[],editable:'native PowerPoint text/shapes/tables/charts; placed photos stay raster'};
