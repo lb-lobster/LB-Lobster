@@ -1,5 +1,5 @@
 ---
-name: pptx-builder
+name: lb-pptx-builder
 description: Generate editable business presentations with local PptxGenJS and validate slide structure.
 ---
 # Native PPTX Builder
