@@ -1,5 +1,5 @@
 ---
-name: visual-director
+name: lb-visual-director
 description: Select the correct visual language for investor analysis, high-end food photography, or editorial brand posters.
 ---
 # Visual Director
