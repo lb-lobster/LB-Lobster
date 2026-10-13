@@ -1,0 +1,36 @@
+name: Presentation Studio CI
+on:
+  pull_request:
+    paths:
+      - 'tools/LB-Presentation-Studio/**'
+      - '.github/workflows/presentation-studio-ci.yml'
+  push:
+    branches:
+      - feat/lb-presentation-studio-v1
+    paths:
+      - 'tools/LB-Presentation-Studio/**'
+      - '.github/workflows/presentation-studio-ci.yml'
+jobs:
+  editable-pptx:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tools/LB-Presentation-Studio
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Run tests
+        run: npm test
+      - name: Build sample PPTX
+        run: npm run demo
+      - name: Upload sample for QA
+        uses: actions/upload-artifact@v4
+        with:
+          name: lb-presentation-studio-editable-demo
+          path: |
+            tools/LB-Presentation-Studio/dist/maillardhelp-demo.pptx
+            tools/LB-Presentation-Studio/dist/maillardhelp-demo.pptx.report.json
