@@ -1,5 +1,5 @@
 ---
-name: strategy
+name: lb-ppt-strategy
 description: Convert commercial documents into a concise, evidence-labeled investor presentation outline with one claim per slide.
 ---
 # Strategy — argument first, design second
